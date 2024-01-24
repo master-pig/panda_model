@@ -1,0 +1,20 @@
+#Instead of using TAB for indentation, use two spaces at the place of one TAB
+#Controller to control robot arm joints
+robot_arm_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: [panda_joint1,panda_joint2,panda_joint3,panda_joint4,panda_joint5,panda_joint6,panda_joint7]
+
+#Controller to continuously publish joint states/positions
+joint_state_controller:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 50
+
+hand_ee_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: [panda_finger_joint1,panda_finger_joint2]
+
+# gazebo_ros_control/pid_gains:
+#   joint1: {p: 7000,i: 10,d: 2000}
+#   joint2: {p: 100,i: 0,d: 25}
+#   joint3: {p: 250,i: 0,d: 10}
+#   joint4: {p: 100,i: 0,d: 0.1}
